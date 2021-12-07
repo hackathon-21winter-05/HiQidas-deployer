@@ -1,0 +1,10 @@
+type: "runtime"
+use_mariadb: true
+entrypoint: caddy start --config /etc/caddy/Caddyfile --adapter caddyfile && /HiQidas
+http_proxy: 80
+cname:
+  - hiqidas.trap.games
+https: "hard"
+branch:
+  main: null
+__image: ghcr.io/hackathon-21winter-05/hiqidas:main
