@@ -7,7 +7,7 @@ WORKDIR /build/HiQidas_UI
 RUN npm ci --unsafe-perm
 RUN npm run build
 
-FROM logica0419/protoc-go:1.0.0 AS back-builder
+FROM logica0419/protoc-go:1.0.1 AS back-builder
 WORKDIR /build
 
 RUN git clone https://github.com/hackathon-21winter-05/HiQidas.git
