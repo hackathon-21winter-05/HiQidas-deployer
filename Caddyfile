@@ -1,13 +1,5 @@
 {
 	admin off
-	servers {
-		timeouts {
-			read_body 0
-			read_header 0
-			write 0
-			idle 0
-		}
-	}
 }
 
 :80
