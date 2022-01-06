@@ -1,5 +1,10 @@
 {
 	admin off
+	servers {
+		timeouts {
+			idle 0
+		}
+	}
 }
 
 :80
