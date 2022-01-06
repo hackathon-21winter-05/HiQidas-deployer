@@ -23,5 +23,5 @@ COPY --from=front-builder /build/HiQidas_UI/dist /usr/share/caddy
 COPY --from=back-builder /HiQidas /
 COPY ./Caddyfile /etc/caddy/Caddyfile
 
-HEALTHCHECK CMD ./HiQidas healthcheck || exit 1
+HEALTHCHECK CMD curl localhost:80/api/ping || exit 1
 ENTRYPOINT caddy start --config /etc/caddy/Caddyfile --adapter caddyfile && /HiQidas
