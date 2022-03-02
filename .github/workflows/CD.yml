@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
       - name: Set up Docker Buildx
@@ -40,7 +40,7 @@ jobs:
     needs: [build]
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Pull docker image
         run: docker pull ghcr.io/hackathon-21winter-05/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
       - name: Container image scan
@@ -55,7 +55,7 @@ jobs:
     needs: [build]
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup
         run: |
           echo "${{ secrets.DEPLOY_KEY }}" > ~/deploy_key
