@@ -15,7 +15,7 @@ WORKDIR /build/HiQidas
 RUN make protobuf-go
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o /HiQidas -ldflags '-s -w'
 
-FROM caddy:2.4.6-alpine AS runner
+FROM caddy:2.5.0-alpine AS runner
 RUN apk update && apk upgrade && apk add bash
 EXPOSE 80
 
